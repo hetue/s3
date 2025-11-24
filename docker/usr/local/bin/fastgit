@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# 更新解析
+wget --quiet --output-document - https://raw.hellogithub.com/hosts >> /etc/hosts
+
+# 执行命令
+/usr/local/bin/git run

@@ -1,0 +1,12 @@
+# 不要源代码
+*.go
+*.yml
+go.mod
+go.sum
+
+# 不要代码控制目录
+.git
+
+# 不要代码编辑器目录
+.idea
+.vscode
