@@ -2,7 +2,7 @@ kind: secret
 name: password_ccr
 get:
   path: secrets
-  name: password_ccr
+  name: password_ccr_ruijc_zongliang
 ---
 
 kind: secret
@@ -38,8 +38,8 @@ clone:
 
 environment:
   GROUP: hetue
-  MODULE: git
-  NAME: agent
+  MODULE: s3
+  SUBMODULE: agent
   OUTPUT_LINUX_DIR: dist/linux
   OUTPUT_LINUX_ARM_V7: arm/v7
   OUTPUT_LINUX_ARM64: arm64
@@ -118,21 +118,6 @@ steps:
             file: $${OUTPUT_WINDOWS}
           - name: $${NAME}-$${VERSION}-darwin-amd64
             file: $${OUTPUT_MAC}
-
-  - name: 通知
-    image: ccr.ccs.tencentyun.com/dronestock/feishu
-    pull: always
-    when:
-      status:
-        - success
-        - failure
-    settings:
-      id:
-        from_secret: id_feishu
-      secret:
-        from_secret: secret_feishu
-      notfound:
-        id: storezhang
 
 
 volumes:
