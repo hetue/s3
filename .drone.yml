@@ -39,7 +39,7 @@ clone:
 environment:
   GROUP: hetue
   MODULE: s3
-  SUBMODULE: agent
+  NAME: agent
   OUTPUT_LINUX_DIR: dist/linux
   OUTPUT_LINUX_ARM_V7: arm/v7
   OUTPUT_LINUX_ARM64: arm64
