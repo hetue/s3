@@ -2,8 +2,6 @@ ARG BINARY=s3
 
 FROM ccr.ccs.tencentyun.com/storezhang/alpine:3.20.1 AS builder
 
-# 复制脚本程序
-COPY docker /docker
 # 复制执行程序
 ARG BINARY
 ARG TARGETPLATFORM=linux/amd64
@@ -24,25 +22,5 @@ LABEL author="storezhang<华寅>" \
 COPY --from=builder /docker /
 
 
-ARG BINARY
-RUN set -ex \
-    \
-    \
-    \
-    && apk update \
-    \
-    # 安装工具
-    && apk --no-cache add git openssh-client \
-    \
-    \
-    \
-    # 增加执行权限
-    && chmod +x /usr/local/bin/* \
-    \
-    \
-    \
-    && rm -rf /var/cache/apk/*
-
-
 # 执行命令
-ENTRYPOINT ["/usr/local/bin/${BINARY}"]
+ENTRYPOINT ["/usr/local/bin/s3", "run"]
