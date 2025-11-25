@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/hetue/boot"
-	"github.com/hetue/git/internal"
+	"github.com/hetue/s3/internal"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-package command
+package internal
 
 import (
 	"github.com/harluo/di"
@@ -6,6 +6,6 @@ import (
 
 func init() {
 	di.New().Instance().Put(
-		NewGit,
+		newClient,
 	).Build().Apply()
 }

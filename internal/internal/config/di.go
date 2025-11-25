@@ -6,13 +6,10 @@ import (
 
 func init() {
 	di.New().Instance().Put(
-		newGit,
+		newS3,
 
-		newBinary,
-		newCredential,
-		newProject,
-		newPull,
-		newPush,
-		newRepository,
+		newServer,
+		newSecret,
+		newSource,
 	).Build().Apply()
 }

@@ -6,9 +6,6 @@ import (
 
 func init() {
 	di.New().Instance().Put(
-		newCredential,
-		newSSH,
-		newPull,
-		newPush,
+		newUpload,
 	).Build().Apply()
 }
